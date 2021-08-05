@@ -1,0 +1,38 @@
+|virtual_input_test
+number[0] => Mux0.IN4
+number[0] => Mux1.IN4
+number[0] => Mux2.IN4
+number[0] => Mux3.IN4
+number[0] => Mux4.IN4
+number[0] => Mux5.IN4
+number[0] => Mux6.IN4
+number[1] => Mux0.IN3
+number[1] => Mux1.IN3
+number[1] => Mux2.IN3
+number[1] => Mux3.IN3
+number[1] => Mux4.IN3
+number[1] => Mux5.IN3
+number[1] => Mux6.IN3
+number[2] => Mux0.IN2
+number[2] => Mux1.IN2
+number[2] => Mux2.IN2
+number[2] => Mux3.IN2
+number[2] => Mux4.IN2
+number[2] => Mux5.IN2
+number[2] => Mux6.IN2
+control => switch15~reg0.CLK
+control => switch16~reg0.CLK
+control => switch17~reg0.CLK
+control => button0~reg0.CLK
+control => button1~reg0.CLK
+control => button2~reg0.CLK
+control => button3~reg0.CLK
+button0 <= button0~reg0.DB_MAX_OUTPUT_PORT_TYPE
+button1 <= button1~reg0.DB_MAX_OUTPUT_PORT_TYPE
+button2 <= button2~reg0.DB_MAX_OUTPUT_PORT_TYPE
+button3 <= button3~reg0.DB_MAX_OUTPUT_PORT_TYPE
+switch17 <= switch17~reg0.DB_MAX_OUTPUT_PORT_TYPE
+switch16 <= switch16~reg0.DB_MAX_OUTPUT_PORT_TYPE
+switch15 <= switch15~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+

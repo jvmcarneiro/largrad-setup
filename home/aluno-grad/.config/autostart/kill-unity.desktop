@@ -1,0 +1,4 @@
+[Desktop Entry]
+Name=Unity Murder
+Exec=/bin/bash -c "sleep 1 && /home/aluno-grad/.local/bin/kill-unity.sh"
+Type=Application

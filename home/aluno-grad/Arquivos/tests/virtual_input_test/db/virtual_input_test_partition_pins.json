@@ -1,0 +1,53 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "button0",
+					"strict" : false
+				},
+				{
+					"name" : "button1",
+					"strict" : false
+				},
+				{
+					"name" : "button2",
+					"strict" : false
+				},
+				{
+					"name" : "button3",
+					"strict" : false
+				},
+				{
+					"name" : "switch17",
+					"strict" : false
+				},
+				{
+					"name" : "switch16",
+					"strict" : false
+				},
+				{
+					"name" : "switch15",
+					"strict" : false
+				},
+				{
+					"name" : "number[2]",
+					"strict" : false
+				},
+				{
+					"name" : "number[0]",
+					"strict" : false
+				},
+				{
+					"name" : "number[1]",
+					"strict" : false
+				},
+				{
+					"name" : "control",
+					"strict" : false
+				}
+			]
+		}
+	]
+}

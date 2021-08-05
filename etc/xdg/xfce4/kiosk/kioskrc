@@ -1,0 +1,8 @@
+[xfce4-panel]
+CustomizePanel=%adm
+
+[xfce4-session]
+CustomizeLogout=%adm
+Shutdown=%adm
+SaveSession=%adm 
+Logout=%adm
