@@ -1,0 +1,13 @@
+|input_test
+number[0] => number0.DATAIN
+number[1] => number1.DATAIN
+number[2] => number2.DATAIN
+number[3] => number3.DATAIN
+number[4] => number4.DATAIN
+number0 <= number[0].DB_MAX_OUTPUT_PORT_TYPE
+number1 <= number[1].DB_MAX_OUTPUT_PORT_TYPE
+number2 <= number[2].DB_MAX_OUTPUT_PORT_TYPE
+number3 <= number[3].DB_MAX_OUTPUT_PORT_TYPE
+number4 <= number[4].DB_MAX_OUTPUT_PORT_TYPE
+
+

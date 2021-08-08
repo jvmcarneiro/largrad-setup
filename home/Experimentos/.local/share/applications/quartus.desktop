@@ -1,0 +1,12 @@
+[Desktop Entry]
+Encoding=UTF-8
+Version=20.1
+Name=Quartus Prime 20.1 Lite Edition
+Comment=Lite Edition
+Exec=/opt/intelFPGA/20.1/quartus/bin/quartus --64bit
+Icon=/opt/intelFPGA/20.1/quartus/adm/quartusii.png
+Terminal=false
+Type=Application
+Categories=Development;Programming
+StartupWMClass=Quartus
+StartupNotify=true

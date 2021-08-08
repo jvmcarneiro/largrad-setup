@@ -1,0 +1,17 @@
+|port_test
+port1 => led0.DATAIN
+port3 => led1.DATAIN
+port5 => led2.DATAIN
+port7 => led3.DATAIN
+port9 => led4.DATAIN
+port11 => led5.DATAIN
+port13 => led6.DATAIN
+led0 <= port1.DB_MAX_OUTPUT_PORT_TYPE
+led1 <= port3.DB_MAX_OUTPUT_PORT_TYPE
+led2 <= port5.DB_MAX_OUTPUT_PORT_TYPE
+led3 <= port7.DB_MAX_OUTPUT_PORT_TYPE
+led4 <= port9.DB_MAX_OUTPUT_PORT_TYPE
+led5 <= port11.DB_MAX_OUTPUT_PORT_TYPE
+led6 <= port13.DB_MAX_OUTPUT_PORT_TYPE
+
+

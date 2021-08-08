@@ -1,0 +1,8 @@
+[Unit]
+Description=XVNC Per-Connection Daemon
+
+[Service]
+ExecStart=-/usr/bin/Xvnc -inetd -query localhost -dpi 96 -geometry 1600x900 -once -IdleTimeout=600 -SecurityTypes=None
+User=nobody
+StandardInput=socket
+StandardError=syslog

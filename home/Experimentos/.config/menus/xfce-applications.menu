@@ -1,0 +1,30 @@
+<!DOCTYPE Menu PUBLIC "-//freedesktop//DTD Menu 1.0//EN"
+  "http://www.freedesktop.org/standards/menu-spec/1.0/menu.dtd">
+
+<Menu>
+    <Name>Xfce</Name>
+
+    <DefaultAppDirs/>
+    <DefaultDirectoryDirs/>
+    <DefaultMergeDirs/>
+
+    <Include>
+        <Category>X-Xfce-Toplevel</Category>
+        <Category>Development</Category>
+        <Category>TextEditor</Category>
+        <Category>Application</Category>
+        <Category>Utility</Category>
+        <Category>Video</Category>
+    </Include>
+
+    <Layout>
+        <Filename>de2-115-gui.desktop</Filename>
+        <Filename>quartus.desktop</Filename>
+        <Filename>modelsim.desktop</Filename>
+        <Filename>cheese.desktop</Filename>
+        <Filename>exo-file-manager.desktop</Filename>
+        <Filename>gedit.desktop</Filename>
+        <Filename>exo-web-browser.desktop</Filename>
+    </Layout>
+
+</Menu>

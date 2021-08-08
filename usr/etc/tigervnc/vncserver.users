@@ -1,0 +1,30 @@
+# TigerVNC User assignment
+#
+# This file assigns users to specific VNC display numbers.
+# The syntax is <display>=<username>. E.g.:
+#
+# :2=andrew
+# :3=lisa
+
+:50=aluno-grad
+:51=aluno-grad
+:52=aluno-grad
+:53=aluno-grad
+:54=aluno-grad
+:55=aluno-grad
+:56=aluno-grad
+:57=aluno-grad
+:58=aluno-grad
+:59=aluno-grad
+:60=aluno-grad
+:61=aluno-grad
+:62=aluno-grad
+:63=aluno-grad
+:64=aluno-grad
+:65=aluno-grad
+:66=aluno-grad
+:67=aluno-grad
+:68=aluno-grad
+:69=aluno-grad
+:70=Experimentos
+:71=mark1

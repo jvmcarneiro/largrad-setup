@@ -1,0 +1,35 @@
+module bin2BCD (binario_in, dezenas, unidades);
+
+	input [5:0] binario_in;
+	output reg [3:0] dezenas, unidades;
+	reg [5:0] binario;
+
+	integer i;
+	
+	always @* begin
+	
+		binario[0] = binario_in[0];
+		binario[1] = binario_in[1];
+		binario[2] = binario_in[2];
+		binario[3] = binario_in[3];
+		binario[4] = binario_in[4];
+		binario[5] = binario_in[5];
+	
+		dezenas = 4'b0000;
+		unidades = 4'b0000;
+		
+		for (i=5; i >= 0; i = i - 1) begin
+		
+			if (dezenas >= 5) dezenas = dezenas + 3;
+			if (unidades >= 5) unidades = unidades + 3;
+			
+			dezenas = dezenas << 1;
+			dezenas[0] = unidades[3];
+			
+			unidades = unidades << 1;
+			unidades[0] = binario[i];
+			
+		end
+	end
+	
+endmodule

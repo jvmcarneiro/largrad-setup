@@ -1,0 +1,10 @@
+[Desktop Entry]
+Version=1.0
+Name=DE2-115 Virtual Input
+Comment=DE2-115 Virtual Input
+Exec=/home/Experimentos/.local/bin/de2-115-gui
+Path=/home/Experimentos/.local/bin/
+Icon=applications-electronics
+Type=Application
+Categories=Development
+StartupNotify=false
