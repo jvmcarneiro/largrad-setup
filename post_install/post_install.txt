@@ -1,4 +1,0 @@
-Após rodar o script:
-
-- Instalar Quartus 20.1 em /opt/intelFPGA/20.1
-- Mover virtual_input.bsf para /opt/intelFPGA/20.1/quartus/libraries
