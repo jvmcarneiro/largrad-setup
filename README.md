@@ -1,5 +1,6 @@
 # Configuração de máquina para experimentos do LaR
 Rodar instruções abaixo após configurar usuário inicial `markX`.
+Feito para Ubuntu 18.04 LTS.
 
 ## Instalar desktop manager
 ```
