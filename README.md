@@ -2,8 +2,9 @@
 Rodar instruções abaixo após configurar usuário inicial `markX`.
 Feito para Ubuntu 18.04 LTS.
 
-## Instalar desktop manager
+## Instalar programas necessários
 ```
+sudo apt install guvcview
 sudo apt install xfce4 xfce4-goodies
 sudo apt remove xscreensaver
 ```
@@ -97,7 +98,9 @@ sudo systemctl enable vncserver@:XX
 
 # Configurando outros usuários de experimentos
 - Replicar comandos do usuário `exp-a` acima para `exp-b`, `exp-c`, etc.
-- Criar senha VNC com `vncpasswd`
+- Modificar `DEFAULT_DEVICE` em `de2-115-gui.py`
+- Modificar campo `exec=` em `~/.local/share/applications/guvcview.desktop` para `guvcview -d /dev/videoX`, com X de acordo com `v4ls-ctl --list-devices`
+- Criar senha VNC com `vncpasswd` logado com novo usuário
 - Adicionar conexões em `/usr/etc/tigervnc/vncserver.users`
 - Rodar e habilitar serviços `vncserver@:` desejados
 
@@ -111,3 +114,4 @@ Repetir últimos 3 passos para criar conexão VNC do usuário `markX` do sistema
 - Copiar `virtual_input.bsf` para `/opt/intelFPGA/20.1/quartus/libraries`
 - USBBlaster já foi instalado ao copiar a pasta `etc/udev/` nos passos anteriores 
 
+Concluída a configuração basta criar conexões na interface Guacamole apontando para os novos servidores VNC.
