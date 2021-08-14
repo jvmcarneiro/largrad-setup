@@ -88,9 +88,10 @@ sudo chattr +i /home/exp-a/.inputrc
 sudo chattr +i /home/exp-a/.profile
 ```
 
-## Criar conexões VNC
+## Criar conexões VNC (XX sendo o número correspondente)
 ```
-sudo systemctl start vncserver
+sudo systemctl start vncserver@:XX
+sudo systemctl enable vncserver@:XX
 ```
 
 # Configurando outros usuários de experimentos
