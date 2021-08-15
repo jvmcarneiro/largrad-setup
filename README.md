@@ -56,6 +56,7 @@ sudo -u aluno-grad vncpasswd -f <<<"largrad" >"/home/aluno-grad/.vnc/passwd"
 ```
 sudo -u exp-a vncpasswd -f <<<"larexpa2021" >"/home/exp-a/.vnc/passwd"
 ```
+Caso não funcione, basta logar manualmente em cada usuário e executar `vncpasswd`.
 
 ## Bloquear arquivos sensíveis
 ```
@@ -110,10 +111,10 @@ Concluída a configuração basta criar conexões na interface Guacamole apontan
 # Configurando outros usuários de experimentos
 - Replicar comandos do usuário `exp-a` acima para `exp-b`, `exp-c`, etc.
 - Modificar `DEFAULT_DEVICE` em `de2-115-gui.py`
-- Compilar `de2-115-gui.py` e mover para `~/.local/bin/`
+- Compilar `de2-115-gui.py`, mover para `~/.local/bin/`, mudar donos e permissões (explicado acima) e bloquear pasta
 - Modificar campos `Exec` e `Path` dos arquivos `de2-115-gui.desktop` e `exo-file-manager.desktop` na pasta `~/.local/share/applications/` com o novo nome de usuário
-- Modificar campo `Exec` em `~/.local/share/applications/guvcview.desktop` para `guvcview -d /dev/videoX`, com X de acordo com `v4ls-ctl --list-devices`
-- Criar senha VNC com `vncpasswd` logado com novo usuário
+- Modificar campo `Exec` em `~/.local/share/applications/guvcview.desktop` para `guvcview -d /dev/videoX`, com X de acordo com `v4ls-ctl --list-devices` (bloqueando a pasta com `chattr` ao concluir)
+- Criar senha VNC com `vncpasswd` logado com novo usuário e bloquear arquivo `~/.vnc/passwd`
 - Adicionar conexões em `/usr/etc/tigervnc/vncserver.users`
 - Rodar e habilitar serviços `vncserver@:` desejados
 
