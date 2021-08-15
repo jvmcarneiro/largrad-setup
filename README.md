@@ -40,6 +40,12 @@ sudo chown -R aluno-grad:aluno-grad /home/aluno-grad/
 sudo chown -R exp-a:exp-a /home/exp-a/
 ```
 
+## Tornar script executável como root
+```
+sudo chown root:root /home/exp-a/.local/bin/kill-jtagd
+sudo chmod u+s /home/exp-a/.local/bin/kill-jtagd
+```
+
 ## Instalar TigerVNC
 ```
 wget https://sourceforge.net/projects/tigervnc/files/stable/1.11.0/tigervnc-1.11.0.x86_64.tar.gz
