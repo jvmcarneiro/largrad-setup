@@ -3,3 +3,4 @@ geometry=1600x900
 dpi=96
 depth=16
 alwaysshared
+idletimeout=300
