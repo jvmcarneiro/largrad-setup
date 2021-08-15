@@ -96,22 +96,26 @@ sudo systemctl start vncserver@:XX
 sudo systemctl enable vncserver@:XX
 ```
 
+# Pós configuração
+- Clonar `https://github.com/jvmcarneiro/de2-115-virtual-input`, configurar porta serial desejada e compilar segundo instruções no README.md
+- Copiar arquivo compilado para `~/.local/bin` dos usuários `exp-X`, modificando permissões para acessar serial com `chown exp-X:dialout` e `chmod g+s`
+- Bloquear acesso à pasta `~/.local/bin` com `sudo chattr -R +i`
+- Instalar Quartus 20.1 em `/opt/intelFPGA/` e mudar as configurações necessárias para rodar o ModelSim (modificar permissões e parâmetros dos executáveis; muitos guias na internet explicam como fazer)
+- Copiar `virtual_input.bsf` para `/opt/intelFPGA/20.1/quartus/libraries`
+- USBBlaster já foi instalado ao copiar a pasta `etc/udev/` nos passos anteriores 
+
+Concluída a configuração basta criar conexões na interface Guacamole apontando para os novos servidores VNC.
+
+
 # Configurando outros usuários de experimentos
 - Replicar comandos do usuário `exp-a` acima para `exp-b`, `exp-c`, etc.
 - Modificar `DEFAULT_DEVICE` em `de2-115-gui.py`
-- Modificar campo `exec=` em `~/.local/share/applications/guvcview.desktop` para `guvcview -d /dev/videoX`, com X de acordo com `v4ls-ctl --list-devices`
+- Compilar `de2-115-gui.py` e mover para `~/.local/bin/`
+- Modificar campos `Exec` e `Path` dos arquivos `de2-115-gui.desktop` e `exo-file-manager.desktop` na pasta `~/.local/share/applications/` com o novo nome de usuário
+- Modificar campo `Exec` em `~/.local/share/applications/guvcview.desktop` para `guvcview -d /dev/videoX`, com X de acordo com `v4ls-ctl --list-devices`
 - Criar senha VNC com `vncpasswd` logado com novo usuário
 - Adicionar conexões em `/usr/etc/tigervnc/vncserver.users`
 - Rodar e habilitar serviços `vncserver@:` desejados
 
 Repetir últimos 3 passos para criar conexão VNC do usuário `markX` do sistema.
 
-# Pós configuração
-- Clonar `https://github.com/jvmcarneiro/de2-115-virtual-input`, configurar porta serial desejada e compilar segundo instruções no README.md
-- Copiar arquivo compilado para `~/.local/bin` dos usuários `exp-X`, modificando donos com `chown`
-- Bloquear acesso à pasta `~/.local/bin` com `sudo chattr -R +i`
-- Instalar Quartus 20.1 em `/opt/intelFPGA/` e fazer as configurações necessárias no ModelSim (modificar permissões e parâmetros dos executáveis)
-- Copiar `virtual_input.bsf` para `/opt/intelFPGA/20.1/quartus/libraries`
-- USBBlaster já foi instalado ao copiar a pasta `etc/udev/` nos passos anteriores 
-
-Concluída a configuração basta criar conexões na interface Guacamole apontando para os novos servidores VNC.
