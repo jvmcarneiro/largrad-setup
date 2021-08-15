@@ -1,5 +1,8 @@
 # Configuração de máquina para experimentos do LaR
 Rodar instruções abaixo após configurar usuário inicial `markX` e programar Arduinos.
+
+Recomendado também remover privilégio de leitura das pastas privadas de usuários em `/home/` com `chmod go-rwx`.
+
 Feito considerando Ubuntu 18.04 LTS.
 
 ## Instalar programas necessários
