@@ -1,6 +1,6 @@
 # Configuração de máquina para experimentos do LaR
-Rodar instruções abaixo após configurar usuário inicial `markX`.
-Feito para Ubuntu 18.04 LTS.
+Rodar instruções abaixo após configurar usuário inicial `markX` e programar Arduinos.
+Feito considerando Ubuntu 18.04 LTS.
 
 ## Instalar programas necessários
 ```
@@ -98,7 +98,7 @@ sudo systemctl enable vncserver@:XX
 ```
 
 # Pós configuração
-- Clonar `https://github.com/jvmcarneiro/de2-115-virtual-input`, configurar porta serial desejada e compilar segundo instruções no README.md
+- Clonar `https://github.com/jvmcarneiro/de2-115-virtual-input` e compilar segundo instruções no README.md
 - Copiar arquivo compilado para `~/.local/bin` dos usuários `exp-X`, modificando permissões para acessar serial com `chown exp-X:dialout` e `chmod g+s`
 - Bloquear acesso à pasta `~/.local/bin` com `sudo chattr -R +i`
 - Instalar Quartus 20.1 em `/opt/intelFPGA/` e mudar as configurações necessárias para rodar o ModelSim (modificar permissões e parâmetros dos executáveis; muitos guias na internet explicam como fazer)
@@ -110,7 +110,7 @@ Concluída a configuração basta criar conexões na interface Guacamole apontan
 
 # Configurando outros usuários de experimentos
 - Replicar comandos do usuário `exp-a` acima para `exp-b`, `exp-c`, etc.
-- Modificar `DEFAULT_DEVICE` em `de2-115-gui.py`
+- Modificar porta serial em `DEFAULT_DEVICE` e câmera desejada no comando `guvcview` em `de2-115-gui.py` (mais detalhes no README)
 - Compilar `de2-115-gui.py`, mover para `~/.local/bin/`, mudar donos e permissões (explicado acima) e bloquear pasta
 - Modificar campos `Exec` e `Path` dos arquivos `de2-115-gui.desktop` e `exo-file-manager.desktop` na pasta `~/.local/share/applications/` com o novo nome de usuário
 - Modificar campo `Exec` em `~/.local/share/applications/guvcview.desktop` para `guvcview -d /dev/videoX`, com X de acordo com `v4ls-ctl --list-devices` (bloqueando a pasta com `chattr` ao concluir)
@@ -118,5 +118,5 @@ Concluída a configuração basta criar conexões na interface Guacamole apontan
 - Adicionar conexões em `/usr/etc/tigervnc/vncserver.users`
 - Rodar e habilitar serviços `vncserver@:` desejados
 
-Repetir últimos 3 passos para criar conexão VNC do usuário `markX` do sistema.
+Para criar uma conexão para o usuário `markX` basta copiar o arquivo `~/.vnc/config` de outro usuário e repetir os últimos 3 passos acima.
 
