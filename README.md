@@ -113,7 +113,7 @@ Concluída a configuração basta criar conexões na interface Guacamole apontan
 - Modificar porta serial em `DEFAULT_DEVICE` e câmera desejada no comando `guvcview` em `de2-115-gui.py` (mais detalhes no README)
 - Compilar `de2-115-gui.py`, mover para `~/.local/bin/`, mudar donos e permissões (explicado acima) e bloquear pasta
 - Modificar campos `Exec` e `Path` dos arquivos `de2-115-gui.desktop` e `exo-file-manager.desktop` na pasta `~/.local/share/applications/` com o novo nome de usuário
-- Modificar campo `Exec` em `~/.local/share/applications/guvcview.desktop` para `guvcview -d /dev/videoX`, com X de acordo com `v4ls-ctl --list-devices` (bloqueando a pasta com `chattr` ao concluir)
+- Modificar campo `Exec` em `~/.local/share/applications/guvcview.desktop` para `guvcview -d /dev/videoX`, com X de acordo com `v4l2-ctl --list-devices` (bloqueando a pasta com `chattr` ao concluir)
 - Criar senha VNC com `vncpasswd` logado com novo usuário e bloquear arquivo `~/.vnc/passwd`
 - Adicionar conexões em `/usr/etc/tigervnc/vncserver.users`
 - Rodar e habilitar serviços `vncserver@:` desejados
