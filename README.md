@@ -111,6 +111,7 @@ sudo systemctl enable vncserver@:XX
 - Copiar arquivo compilado para `~/.local/bin` dos usuários `exp-X`, modificando permissões para acessar serial com `chown exp-X:dialout` e `chmod g+s`
 - Bloquear acesso à pasta `~/.local/bin` com `sudo chattr -R +i`
 - Instalar Quartus 20.1 em `/opt/intelFPGA/` e mudar as configurações necessárias para rodar o ModelSim (modificar permissões e parâmetros dos executáveis; muitos guias na internet explicam como fazer)
+- Criar links simbólicos para `quartus` e `vsim` em `/usr/local/bin/`
 - Copiar `virtual_input.bsf` para `/opt/intelFPGA/20.1/quartus/libraries`
 - USBBlaster já foi instalado ao copiar a pasta `etc/udev/` nos passos anteriores 
 
