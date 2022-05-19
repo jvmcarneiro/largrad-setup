@@ -31,7 +31,7 @@ sudo cp -a home/. /home/
 sudo cp -a etc/. /etc/
 ```
 ```
-sudo cp -a usr/. /usr.
+sudo cp -a usr/. /usr/
 ```
 
 ## Trocar donos dos arquivos
