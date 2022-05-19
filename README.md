@@ -25,13 +25,13 @@ sudo usermod -a -G video exp-a
 
 ## Copiar arquivos de configuração (um de cada vez para evitar erros)
 ```
-sudo rsync -a home /
+sudo cp -a home/. /home/
 ```
 ```
-sudo rsync -a etc /
+sudo cp -a etc/. /etc/
 ```
 ```
-sudo rsync -a usr /
+sudo cp -a usr/. /usr.
 ```
 
 ## Trocar donos dos arquivos
