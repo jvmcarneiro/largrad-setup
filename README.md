@@ -82,10 +82,11 @@ sudo chattr +i /home/exp-a/Arquivos/virtual_input.v
 sudo chattr +i /home/exp-a/Arquivos/virtual_input_pins.csv
 ```
 
-## Criar conexões VNC (XX sendo o número correspondente)
+## Criar conexões VNC
+Substituir `XX` e `YY` pelos números correspondentes no arquivo `/usr/etc/tigervnc/vncserver.users`.
 ```
 sudo systemctl start vncserver@:XX
-sudo systemctl enable vncserver@:XX
+sudo systemctl enable vncserver@:YY
 ```
 
 # Pós configuração
