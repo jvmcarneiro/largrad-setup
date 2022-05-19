@@ -59,13 +59,7 @@ sudo tar xzkf usr.tgz -C /
 ```
 
 ## Criar senhas VNC
-```
-sudo -u aluno-grad vncpasswd -f <<<"largrad" | sudo -u aluno-grad tee -a "/home/aluno-grad/.vnc/passwd" >/dev/null
-```
-```
-sudo -u exp-a vncpasswd -f <<<"larexpa2021" | sudo -u exp-a tee -a "/home/exp-a/.vnc/passwd" >/dev/null
-```
-Caso não funcione, basta logar manualmente em cada usuário e executar `vncpasswd`.
+Basta logar manualmente em cada usuário e executar `vncpasswd`.
 
 ## Bloquear arquivos sensíveis
 ```
