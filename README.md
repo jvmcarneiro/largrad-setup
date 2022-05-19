@@ -71,12 +71,6 @@ sudo chattr +i /home/aluno-grad/.vnc/config
 sudo chattr +i /home/aluno-grad/.vnc/passwd
 sudo chattr +i /home/aluno-grad/Arquivos/virtual_input.v
 sudo chattr +i /home/aluno-grad/Arquivos/virtual_input_pins.csv
-sudo chattr +i /home/aluno-grad/.bash_login
-sudo chattr +i /home/aluno-grad/.bash_logout
-sudo chattr +i /home/aluno-grad/.bash_profile
-sudo chattr +i /home/aluno-grad/.bashrc
-sudo chattr +i /home/aluno-grad/.inputrc
-sudo chattr +i /home/aluno-grad/.profile
 ```
 ```
 sudo chattr -R +i /home/exp-a/.config/menus/
@@ -86,12 +80,6 @@ sudo chattr +i /home/exp-a/.vnc/config
 sudo chattr +i /home/exp-a/.vnc/passwd
 sudo chattr +i /home/exp-a/Arquivos/virtual_input.v
 sudo chattr +i /home/exp-a/Arquivos/virtual_input_pins.csv
-sudo chattr +i /home/exp-a/.bash_login
-sudo chattr +i /home/exp-a/.bash_logout
-sudo chattr +i /home/exp-a/.bash_profile
-sudo chattr +i /home/exp-a/.bashrc
-sudo chattr +i /home/exp-a/.inputrc
-sudo chattr +i /home/exp-a/.profile
 ```
 
 ## Criar conexões VNC (XX sendo o número correspondente)
