@@ -1,9 +1,9 @@
 # Server configuration for LaR experiments
-Run the following instructions after configuring the initial user `markX` and programming the connected microcontrollers.
+Follow these instructions after configuring the initial user `markX` and programming the connected microcontrollers.
 
-Recommended to also remove read privileges from users' private folders in `/home/` with `chmod go-rwx`.
+It is recommended to also remove read privileges from users' private folders in `/home/` with `chmod go-rwx`.
 
-Made considering the Ubuntu 18.04 LTS system version.
+Made for Ubuntu 18.04 LTS systems.
 
 ## Install necessary programs
 ```
