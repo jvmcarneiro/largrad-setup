@@ -102,7 +102,7 @@ sudo systemctl enable vncserver@:YY
 Once the configuration is complete, you are free to create connections in the Guacamole interface pointing to the VNC addresses.
 
 
-# Configuring additional Experiment users
+# Configuring additional Experiment connections
 1. Replicate the `exp-a` user configuration steps for newly-created `exp-b`, `exp-c`, etc.
 1. Modify serial port in `DEFAULT_DEVICE` and desired camera in the `guvcview` command in `de2-115-gui.py` (more details in the [README](https://github.com/jvmcarneiro/de2-115-virtual-input#setting-default-serial-port-and-camera)
 1. Compile `de2-115-gui.py`, move to new user's `~/.local/bin/` folder, change ownership and permissions (explained above) and lock folder
