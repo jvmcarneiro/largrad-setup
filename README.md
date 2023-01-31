@@ -1,18 +1,18 @@
-# Configuração de máquina para experimentos do LaR
-Rodar instruções abaixo após configurar usuário inicial `markX` e programar Arduinos.
+# Server configuration for LaR experiments
+Run the following instructions after configuring the initial user `markX` and programming the connected microcontrollers.
 
-Recomendado também remover privilégio de leitura das pastas privadas de usuários em `/home/` com `chmod go-rwx`.
+Recommended to also remove read privileges from users' private folders in `/home/` with `chmod go-rwx`.
 
-Feito considerando Ubuntu 18.04 LTS.
+Made considering the Ubuntu 18.04 LTS system version.
 
-## Instalar programas necessários
+## Install necessary programs
 ```
 sudo apt install guvcview
 sudo apt install xfce4 xfce4-goodies
 sudo apt remove xscreensaver
 ```
 
-## Criar usuários
+## Create users
 ```
 sudo useradd -m aluno-grad
 sudo passwd aluno-grad
@@ -23,7 +23,7 @@ sudo usermod -a -G exp-a $USER
 sudo usermod -a -G video exp-a
 ```
 
-## Copiar arquivos de configuração (um de cada vez para evitar erros)
+## Copy configuration files (one at a time to avoid errors)
 ```
 sudo cp -a home/. /home/
 ```
@@ -34,19 +34,19 @@ sudo cp -a etc/. /etc/
 sudo cp -a usr/. /usr/
 ```
 
-## Trocar donos dos arquivos
+## Change file owners
 ```
 sudo chown -R aluno-grad:aluno-grad /home/aluno-grad/
 sudo chown -R exp-a:exp-a /home/exp-a/
 ```
 
-## Tornar script executável como root
+## Make scripts executable
 ```
 sudo chown root:root /home/exp-a/.local/bin/kill-jtagd
 sudo chmod u+s /home/exp-a/.local/bin/kill-jtagd
 ```
 
-## Instalar TigerVNC
+## Install TigerVNC
 ```
 wget https://sourceforge.net/projects/tigervnc/files/stable/1.11.0/tigervnc-1.11.0.x86_64.tar.gz
 ```
@@ -58,10 +58,11 @@ sudo tar czf usr.tgz usr
 sudo tar xzkf usr.tgz -C /
 ```
 
-## Criar senhas VNC
+## Create VNC passwords
+Manually log in as each user and execute the `vncpasswd` command.
 Basta logar manualmente em cada usuário e executar `vncpasswd`.
 
-## Bloquear arquivos sensíveis
+## Block sensitive files
 ```
 sudo chattr -R +i /home/aluno-grad/.config/autostart/
 sudo chattr -R +i /home/aluno-grad/.config/menus/
@@ -82,34 +83,43 @@ sudo chattr +i /home/exp-a/Arquivos/virtual_input.v
 sudo chattr +i /home/exp-a/Arquivos/virtual_input_pins.csv
 ```
 
-## Criar conexões VNC
-Substituir `XX` e `YY` pelos números correspondentes no arquivo `/usr/etc/tigervnc/vncserver.users`.
+## Create VNC connections
+Substitute `XX` and `YY` for the corresponding numbers set in `/usr/etc/tigervnc/vncserver.users`.
 ```
 sudo systemctl start vncserver@:XX
 sudo systemctl enable vncserver@:YY
 ```
 
-# Pós configuração
-- Clonar <https://github.com/jvmcarneiro/de2-115-virtual-input> e compilar segundo instruções no README.md
-- Copiar arquivo compilado para `~/.local/bin` dos usuários `exp-X`, modificando permissões para acessar serial com `chown exp-X:dialout` e `chmod g+s`
-- Bloquear acesso à pasta `~/.local/bin` com `sudo chattr -R +i`
-- Instalar Quartus 20.1 em `/opt/intelFPGA/` e mudar as configurações necessárias para rodar o ModelSim (modificar permissões e parâmetros dos executáveis; muitos guias na internet explicam como fazer)
-- Criar links simbólicos para `quartus` e `vsim` em `/usr/local/bin/`
-- Copiar `virtual_input.bsf` para `/opt/intelFPGA/20.1/quartus/libraries`
-- USBBlaster já foi instalado ao copiar a pasta `etc/udev/` nos passos anteriores 
+# Post installation steps
+- Clone <https://github.com/jvmcarneiro/de2-115-virtual-input> and compile following README.md instructions
+- Copy the compiled file to `exp-X` user's `~/.local/bin` folder, modifying serial access permissions with `chown exp-X:dialout` and `chmod g+s`
+- Block access to folder `~/.local/bin` with `sudo chattr -R +i`
+- Install Quartus 20.1 in `/opt/intelFPGA/` and make the necessary adjustments in order to run ModelSim in Ubuntu environments (modify permissions and parameter values in the executable files; many internet guides explain how to do this)
+- Create symbolic links to `quartus` and `vsim` in `/usr/local/bin/`
+- Copy `virtual_input.bsf` to `/opt/intelFPGA/20.1/quartus/libraries`
+- USBBlaster has already been installed when the `etc/udev/` folder was copied in previous steps 
 
-Concluída a configuração basta criar conexões na interface Guacamole apontando para os novos servidores VNC.
+Once the configuration is complete, you are free to create connections in the Guacamole interface pointing to the VNC addresses.
 
 
-# Configurando outros usuários de experimentos
-- Replicar comandos do usuário `exp-a` acima para `exp-b`, `exp-c`, etc.
-- Modificar porta serial em `DEFAULT_DEVICE` e câmera desejada no comando `guvcview` em `de2-115-gui.py` (mais detalhes no README)
-- Compilar `de2-115-gui.py`, mover para `~/.local/bin/`, mudar donos e permissões (explicado acima) e bloquear pasta
-- Modificar campos `Exec` e `Path` dos arquivos `de2-115-gui.desktop` e `exo-file-manager.desktop` na pasta `~/.local/share/applications/` com o novo nome de usuário
-- Modificar campo `Exec` em `~/.local/share/applications/guvcview.desktop` para `guvcview -d /dev/videoX`, com X de acordo com `v4l2-ctl --list-devices` (bloqueando a pasta com `chattr` ao concluir)
-- Criar senha VNC com `vncpasswd` logado com novo usuário e bloquear arquivo `~/.vnc/passwd`
-- Adicionar conexões em `/usr/etc/tigervnc/vncserver.users`
-- Rodar e habilitar serviços `vncserver@:` desejados
+# Configuring additional Experiment users
+1. Replicate the `exp-a` user configuration steps for newly-created `exp-b`, `exp-c`, etc.
+1. Modify serial port in `DEFAULT_DEVICE` and desired camera in the `guvcview` command in `de2-115-gui.py` (more details in the [README](https://github.com/jvmcarneiro/de2-115-virtual-input#setting-default-serial-port-and-camera)
+1. Compile `de2-115-gui.py`, move to new user's `~/.local/bin/` folder, change ownership and permissions (explained above) and lock folder
+1. Modify `Exec` and `Path` fields of `de2-115-gui.desktop` and `exo-file-manager.desktop` files in `~/.local/share/applications/` folder with the new username
+1. Modify `Exec` field in `~/.local/share/applications/guvcview.desktop` to `guvcview -d /dev/videoX`, with X according to `v4l2-ctl --list-devices` (blocking the folder with `chattr` when done)
+1. Create VNC password with `vncpasswd` logged in with new user and lock file `~/.vnc/passwd`
+1. Add connections to `/usr/etc/tigervnc/vncserver.users`
+1. Run and enable the desired `vncserver@:` services
 
-Para criar uma conexão para o usuário `markX` basta copiar o arquivo `~/.vnc/config` de outro usuário e repetir os últimos 3 passos acima.
+In order to create a connection for the admin user `markX`, copy the file `~/.vnc/config` from another user and repeat the last 3 steps from the list above.
 
+# Troubleshooting
+The configuration files in this repository reproduce the [instructions for setting up TigerVNC for on demand sessions](https://wiki.archlinux.org/title/TigerVNC#Running_Xvnc_with_XDMCP_for_on_demand_sessions).
+This feature, however, is hardware dependent and not always available.
+
+If you, for instance, are not able to simultaneously connect to more than one `aluno-grad` VNC session, your system may not be compatible with this approach and only one connection is allowed per Linux account.
+In that case, the alternative is to create new Linux users for each desired connection, following much of the [Configuring additional users section](#configuring-additional-experiment-users), skipping the steps related to the DE2-115 Virtual GUI when configuring virtual connections like the `aluno-grad`.
+
+The downside of this approach, besides the necessary additional configuration, is the fixed computing overhead in comparison to on demand usage.
+On the user side, however, the experience will be quite similar.
