@@ -91,13 +91,13 @@ sudo systemctl enable vncserver@:YY
 ```
 
 # Post installation steps
-- Clone <https://github.com/jvmcarneiro/de2-115-virtual-input> and compile following README.md instructions
-- Copy the compiled file to `exp-X` user's `~/.local/bin` folder, modifying serial access permissions with `chown exp-X:dialout` and `chmod g+s`
-- Block access to folder `~/.local/bin` with `sudo chattr -R +i`
-- Install Quartus 20.1 in `/opt/intelFPGA/` and make the necessary adjustments in order to run ModelSim in Ubuntu environments (modify permissions and parameter values in the executable files; many internet guides explain how to do this)
-- Create symbolic links to `quartus` and `vsim` in `/usr/local/bin/`
-- Copy `virtual_input.bsf` to `/opt/intelFPGA/20.1/quartus/libraries`
-- USBBlaster has already been installed when the `etc/udev/` folder was copied in previous steps 
+1. Clone <https://github.com/jvmcarneiro/de2-115-virtual-input> and compile following README.md instructions
+1. Copy the compiled file to `exp-X` user's `~/.local/bin` folder, modifying serial access permissions with `chown exp-X:dialout` and `chmod g+s`
+1. Block access to folder `~/.local/bin` with `sudo chattr -R +i`
+1. Install Quartus 20.1 in `/opt/intelFPGA/` and make the necessary adjustments in order to run ModelSim in Ubuntu environments (modify permissions and parameter values in the executable files; many internet guides explain how to do this)
+1. Create symbolic links to `quartus` and `vsim` in `/usr/local/bin/`
+1. Copy `virtual_input.bsf` to `/opt/intelFPGA/20.1/quartus/libraries`
+1. USBBlaster has already been installed when the `etc/udev/` folder was copied in previous steps 
 
 Once the configuration is complete, you are free to create connections in the Guacamole interface pointing to the VNC addresses.
 
