@@ -119,7 +119,7 @@ The configuration files in this repository reproduce the [instructions for setti
 This feature, however, is hardware dependent and not always available.
 
 If you, for instance, are not able to simultaneously connect to more than one `aluno-grad` VNC session, your system may not be compatible with this approach and only one connection is allowed per Linux account.
-In that case, the alternative is to create new Linux users for each desired connection, following much of the [Configuring additional users section](#configuring-additional-experiment-users), skipping the steps related to the DE2-115 Virtual GUI when configuring virtual connections like the `aluno-grad`.
+In that case, the alternative is to create new Linux users for each desired connection, following much of the [Configuring additional users section](#configuring-additional-experiment-users), skipping the steps related to the DE2-115 Virtual GUI when configuring virtual-only connections like the `aluno-grad`.
 
 The downside of this approach, besides the necessary additional configuration, is the fixed computing overhead in comparison to on demand usage.
-On the user side, however, the experience will be quite similar.
+To the final user, however, the experience will be very much the same.
